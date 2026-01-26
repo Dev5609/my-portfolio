@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Twitter, ChevronDown } from "lucide-react";
+import { Github, Linkedin, ChevronDown } from "lucide-react";
+import XLogo from "./XLogo";
 
 const HeroSection = () => {
   return (
@@ -12,7 +13,7 @@ const HeroSection = () => {
       </div>
 
       {/* Grid pattern overlay */}
-      <div 
+      <div
         className="absolute inset-0 opacity-[0.02]"
         style={{
           backgroundImage: `linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)`,
@@ -35,7 +36,7 @@ const HeroSection = () => {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8"
           >
             <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-            <span className="text-sm text-muted-foreground font-mono">Available for work</span>
+            <span className="text-sm text-muted-foreground font-mono">Currently solving bugs</span>
           </motion.div>
 
           {/* Main heading */}
@@ -56,7 +57,7 @@ const HeroSection = () => {
             transition={{ delay: 0.5, duration: 0.6 }}
             className="text-xl md:text-2xl text-muted-foreground font-mono mb-6"
           >
-            Casual Vibe Coder
+            Casual Programmer
           </motion.p>
 
           {/* Description */}
@@ -66,8 +67,8 @@ const HeroSection = () => {
             transition={{ delay: 0.6, duration: 0.6 }}
             className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12"
           >
-            I craft digital experiences with clean code and creative solutions. 
-            From e-commerce platforms to AI-powered tools, I bring ideas to life with modern web technologies.
+            I craft digital experiences with clean code and creative solutions.
+            From e-commerce platforms to AI-powered tools, I bring ideas to life with modern web technologies and through some vibe coding.
           </motion.p>
 
           {/* Social links */}
@@ -87,7 +88,7 @@ const HeroSection = () => {
               <span>GitHub</span>
             </a>
             <a
-              href="https://linkedin.com/in/"
+              href="https://www.linkedin.com/in/devansh-goel09"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center gap-2 px-6 py-3 rounded-full glass-card transition-all hover:scale-105 hover:border-primary/50"
@@ -96,12 +97,12 @@ const HeroSection = () => {
               <span>LinkedIn</span>
             </a>
             <a
-              href="https://x.com/"
+              href="https://x.com/devanshh_9"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center gap-2 px-6 py-3 rounded-full glass-card transition-all hover:scale-105 hover:border-primary/50"
             >
-              <Twitter className="w-5 h-5" />
+              <XLogo className="w-4 h-4" />
               <span>X</span>
             </a>
           </motion.div>
@@ -112,7 +113,7 @@ const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 0.6 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2"
+          className="mt-12"
         >
           <a
             href="#projects"

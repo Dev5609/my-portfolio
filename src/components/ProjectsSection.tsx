@@ -4,10 +4,10 @@ import projects from "@/data/projects.json";
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="py-24 md:py-32 relative">
+    <section id="projects" className="py-16 md:py-24 relative">
       {/* Background accent */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-      
+
       <div className="container px-6">
         {/* Section header */}
         <motion.div
@@ -24,7 +24,7 @@ const ProjectsSection = () => {
             Projects I've Built
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            A collection of projects showcasing my journey in web development—from 
+            A collection of projects showcasing my journey in web development—from
             simple utilities to full-stack applications.
           </p>
         </motion.div>

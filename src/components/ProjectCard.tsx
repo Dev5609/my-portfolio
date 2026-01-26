@@ -93,7 +93,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
           ))}
         </div>
 
-        {/* Demo link button */}
+        {/* Demo link button
         <a
           href={project.demoUrl}
           target="_blank"
@@ -102,7 +102,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
         >
           View Live Demo
           <ExternalLink className="w-4 h-4" />
-        </a>
+        </a> */}
       </div>
     </motion.article>
   );
