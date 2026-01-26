@@ -1,0 +1,42 @@
+[
+  {
+    "id": "milletify",
+    "name": "Milletify",
+    "repoName": "millet-magic-store",
+    "description": "A modern e-commerce platform for healthy millet-based products with a beautiful shopping experience.",
+    "techStack": ["TypeScript", "React", "Tailwind CSS", "Vite"],
+    "githubUrl": "https://github.com/Dev5609/millet-magic-store",
+    "demoUrl": "https://milletify.vercel.app",
+    "language": "TypeScript"
+  },
+  {
+    "id": "summariq",
+    "name": "SummarIQ",
+    "repoName": "youtube-notes-pro",
+    "description": "AI-powered YouTube video summarizer that generates smart notes and key insights from any video.",
+    "techStack": ["TypeScript", "React", "AI/ML", "Tailwind CSS"],
+    "githubUrl": "https://github.com/Dev5609/youtube-notes-pro",
+    "demoUrl": "https://summariq.vercel.app",
+    "language": "TypeScript"
+  },
+  {
+    "id": "echotrap",
+    "name": "EchoTrap",
+    "repoName": "audio-echo-mirror",
+    "description": "An audio echo-er for moments when people need to listen to themselves—real-time audio reflection tool.",
+    "techStack": ["HTML", "CSS", "JavaScript", "Web Audio API"],
+    "githubUrl": "https://github.com/Dev5609/audio-echo-mirror",
+    "demoUrl": "https://echotrap.vercel.app",
+    "language": "HTML"
+  },
+  {
+    "id": "basic-calculator",
+    "name": "Basic Calculator",
+    "repoName": "Calculator",
+    "description": "A clean, functional calculator built with vanilla web technologies—simple yet elegant.",
+    "techStack": ["HTML", "CSS", "JavaScript"],
+    "githubUrl": "https://github.com/Dev5609/Calculator",
+    "demoUrl": "https://calculator-khaki-chi.vercel.app",
+    "language": "HTML"
+  }
+]
