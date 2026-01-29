@@ -35,6 +35,10 @@ const ProjectsSection = () => {
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </div>
+
+        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-center mt-12">
+          And of course, this very portfolio site you're exploring right now!
+        </p>
       </div>
     </section>
   );
