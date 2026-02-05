@@ -1,5 +1,20 @@
 [
   {
+     "id": "bhumipoojan",
+     "name": "BhumiPoojan",
+     "repoName": "bhumipoojan",
+     "description": "Built full-stack property platform using modern AI-assisted development workflow, integrating Next.js, Firebase, and multiple AI APIs.",
+     "techStack": [
+       "Next.js",
+       "Firebase",
+       "AI APIs",
+       "TypeScript"
+     ],
+     "githubUrl": "https://github.com/Dev5609/bhumipoojan",
+     "demoUrl": "https://bhumipoojan.vercel.app",
+     "language": "TypeScript"
+   },
+   {
     "id": "milletify",
     "name": "Milletify",
     "repoName": "millet-magic-store",
