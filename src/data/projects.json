@@ -1,60 +1,44 @@
 [
   {
-     "id": "bhumipoojan",
-     "name": "BhumiPoojan",
-     "repoName": "bhumipoojan",
-     "description": "Built full-stack property platform using modern AI-assisted development workflow, integrating Next.js, Firebase, and multiple AI APIs.",
-     "techStack": [
-       "Next.js",
-       "Firebase",
-       "AI APIs",
-       "TypeScript"
-     ],
-     "githubUrl": "https://github.com/Dev5609/bhumipoojan",
-     "demoUrl": "https://bhumipoojan.vercel.app",
-     "language": "TypeScript"
-   },
-   {
-    "id": "milletify",
-    "name": "Milletify",
-    "repoName": "millet-magic-store",
-    "description": "A modern e-commerce platform for healthy millet-based products with a beautiful shopping experience.",
-    "techStack": [
-      "TypeScript",
-      "React",
-      "Tailwind CSS",
-      "Vite"
-    ],
-    "githubUrl": "https://github.com/Dev5609/millet-magic-store",
-    "demoUrl": "https://milletify.vercel.app",
+    "id": "bhumipoojan",
+    "name": "BhumiPoojan",
+    "repoName": "bhumipoojan",
+    "featured": true,
+    "description": "A modern property platform that helps buyers, sellers, and agents connect seamlessly — with smart AI features that make discovering the right property easier than ever.",
+    "techStack": ["Next.js", "Firebase", "TypeScript", "AI APIs"],
+    "githubUrl": "https://github.com/Dev5609/bhumipoojan",
+    "demoUrl": "https://bhumipoojan.vercel.app",
     "language": "TypeScript"
   },
   {
     "id": "summariq",
     "name": "SummarIQ",
     "repoName": "youtube-notes-pro",
-    "description": "AI-powered YouTube video summarizer that generates smart notes and key insights from any video.",
-    "techStack": [
-      "TypeScript",
-      "React",
-      "AI/ML",
-      "Tailwind CSS"
-    ],
+    "featured": true,
+    "description": "An AI tool that turns long YouTube videos into clean, easy-to-read notes and key takeaways — perfect for students, creators, and busy professionals.",
+    "techStack": ["React", "TypeScript", "AI APIs", "Tailwind CSS"],
     "githubUrl": "https://github.com/Dev5609/youtube-notes-pro",
     "demoUrl": "https://summariq.vercel.app",
+    "language": "TypeScript"
+  },
+  {
+    "id": "milletify",
+    "name": "Milletify",
+    "repoName": "millet-magic-store",
+    "featured": true,
+    "description": "A clean, modern online store built for a healthy-food brand — giving customers a smooth browsing and shopping experience across every device.",
+    "techStack": ["React", "TypeScript", "Tailwind CSS", "Vite"],
+    "githubUrl": "https://github.com/Dev5609/millet-magic-store",
+    "demoUrl": "https://milletify.vercel.app",
     "language": "TypeScript"
   },
   {
     "id": "echotrap",
     "name": "EchoTrap",
     "repoName": "audio-echo-mirror",
-    "description": "An audio echo-er for moments when people need to listen to themselves—real-time audio reflection tool.",
-    "techStack": [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "Web Audio API"
-    ],
+    "featured": false,
+    "description": "A playful audio tool that echoes back what you say in real time — a fun little experiment with voice and the Web Audio API.",
+    "techStack": ["JavaScript", "Web Audio API", "HTML", "CSS"],
     "githubUrl": "https://github.com/Dev5609/audio-echo-mirror",
     "demoUrl": "https://echotrap.vercel.app",
     "language": "HTML"
@@ -63,12 +47,9 @@
     "id": "basic-calculator",
     "name": "Basic Calculator",
     "repoName": "Calculator",
-    "description": "A clean, functional calculator built with vanilla web technologies—simple yet elegant.",
-    "techStack": [
-      "HTML",
-      "CSS",
-      "JavaScript"
-    ],
+    "featured": false,
+    "description": "A clean, minimal calculator app — one of my first builds, made purely with the fundamentals of the web.",
+    "techStack": ["JavaScript", "HTML", "CSS"],
     "githubUrl": "https://github.com/Dev5609/Calculator",
     "demoUrl": "https://calculator-dev9.vercel.app",
     "language": "HTML"

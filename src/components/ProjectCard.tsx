@@ -82,27 +82,12 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
         </p>
 
         {/* Tech stack */}
-        <div className="flex flex-wrap gap-2">
-          {project.techStack.map((tech) => (
-            <span
-              key={tech}
-              className="px-3 py-1 text-xs font-mono rounded-full bg-secondary text-secondary-foreground"
-            >
-              {tech}
-            </span>
-          ))}
+        <div>
+          <p className="text-xs font-mono text-muted-foreground/70 mb-2">Tech:</p>
+          <p className="text-sm font-mono text-foreground/80">
+            {project.techStack.join(" • ")}
+          </p>
         </div>
-
-        {/* Demo link button
-        <a
-          href={project.demoUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline underline-offset-4"
-        >
-          View Live Demo
-          <ExternalLink className="w-4 h-4" />
-        </a> */}
       </div>
     </motion.article>
   );
