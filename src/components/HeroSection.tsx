@@ -36,7 +36,7 @@ const HeroSection = () => {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8"
           >
             <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-            <span className="text-sm text-muted-foreground font-mono">Currently solving bugs</span>
+            <span className="text-sm text-muted-foreground font-mono">Available for new projects</span>
           </motion.div>
 
           {/* Main heading */}
@@ -55,9 +55,9 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.6 }}
-            className="text-xl md:text-2xl text-muted-foreground font-mono mb-6"
+            className="text-lg md:text-2xl text-foreground/90 font-mono mb-6"
           >
-            Casual Programmer
+            Building Modern Websites &amp; AI Applications
           </motion.p>
 
           {/* Description */}
@@ -67,8 +67,9 @@ const HeroSection = () => {
             transition={{ delay: 0.6, duration: 0.6 }}
             className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12"
           >
-            I craft digital experiences with clean code and creative solutions.
-            From e-commerce platforms to AI-powered tools, I bring ideas to life with modern web technologies and through some vibe coding.
+            I build modern websites and AI-powered applications that help
+            businesses and creators establish a stronger, more meaningful
+            online presence.
           </motion.p>
 
           {/* Social links */}
