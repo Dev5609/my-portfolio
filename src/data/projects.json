@@ -11,6 +11,17 @@
     "language": "TypeScript"
   },
   {
+    "id": "decten-motion",
+    "name": "Decten Motion",
+    "repoName": "decten-motion",
+    "featured": true,
+    "description": "A sleek, high-impact portfolio site for a motion design studio — crafted to showcase their work beautifully and win over new clients at first glance.",
+    "techStack": ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    "githubUrl": "https://github.com/Dev5609",
+    "demoUrl": "https://dectenmotion.vercel.app",
+    "language": "TypeScript"
+  },
+  {
     "id": "summariq",
     "name": "SummarIQ",
     "repoName": "youtube-notes-pro",
