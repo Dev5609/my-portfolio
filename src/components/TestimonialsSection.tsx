@@ -6,7 +6,7 @@ const testimonials = [
   {
     quote:
       "The portfolio was literally perfect. It was exactly what I wanted, to be honest. I loved the outcome. Thanks for making it so good and well.",
-    name: "Kush Bhargav",
+    name: "Kush Bhargava",
     role: "Decten Motion",
     image: "/kush-bhargav.png",
   },
