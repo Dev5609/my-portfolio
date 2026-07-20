@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Quote, Sparkles } from "lucide-react";
-import kushAsset from "@/assets/kush-bhargav.png.asset.json";
+
 
 const testimonials = [
   {
@@ -8,7 +8,7 @@ const testimonials = [
       "The portfolio was literally perfect. It was exactly what I wanted, to be honest. I loved the outcome. Thanks for making it so good and well.",
     name: "Kush Bhargav",
     role: "Decten Motion",
-    image: kushAsset.url,
+    image: "/kush-bhargav.png",
   },
 ];
 
