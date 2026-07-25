@@ -18,7 +18,7 @@ const Footer = () => {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-xs font-mono text-muted-foreground hover:text-primary hover:border-primary/40 transition-colors"
           >
             <Archive className="w-3.5 h-3.5" />
-            Visit the Museum — CodingCafe (2021)
+            Visit the Museum — Coding-Cafe (2021)
           </Link>
 
           <div className="flex items-center gap-2 text-muted-foreground">

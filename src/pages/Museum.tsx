@@ -15,7 +15,7 @@ const timeline = [
     year: "2021",
     items: [
       "Learned HTML, CSS & JavaScript",
-      "Built CodingCafe",
+      "Built Coding-Cafe",
       "Bought my first domain",
       "Hosted it using Google Drive + drv.tw",
     ],
@@ -36,7 +36,7 @@ const timeline = [
   {
     year: "2026",
     items: [
-      "Restored CodingCafe using archived HTML, CSS, images and assets recovered from the Wayback Machine.",
+      "Restored Coding-Cafe using archived HTML, CSS, images and assets recovered from the Wayback Machine.",
     ],
   },
 ];
@@ -86,7 +86,7 @@ const Museum = () => {
             </span>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4">
-            CodingCafe <span className="text-muted-foreground font-normal">(2021)</span>
+            Coding-Cafe <span className="text-muted-foreground font-normal">(2021)</span>
           </h1>
           <p className="text-muted-foreground text-lg italic">
             My first website, restored from the Internet Archive.
@@ -148,7 +148,7 @@ const Museum = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-8">The Story</h2>
           <div className="space-y-5 text-foreground/85 leading-relaxed text-lg">
             <p>
-              CodingCafe was my very first website, originally created in 2021
+              Coding-Cafe was my very first website, originally created in 2021
               while I was learning web development.
             </p>
             <p>
@@ -165,7 +165,7 @@ const Museum = () => {
             <p>
               Fortunately, the Internet Archive had preserved the website. Using
               archived HTML, CSS, images and other surviving assets, I carefully
-              restored CodingCafe as faithfully as possible.
+              restored Coding-Cafe as faithfully as possible.
             </p>
             <p>
               Rather than redesigning it, I intentionally preserved the original
