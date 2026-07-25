@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft, ExternalLink, Archive, Calendar } from "lucide-react";
+import { useEffect } from "react";
 
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
