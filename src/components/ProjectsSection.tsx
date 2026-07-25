@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
+import { Archive } from "lucide-react";
 import ProjectCard from "./ProjectCard";
+import { Link } from "react-router-dom";
 import projectsData from "@/data/projects.json";
 
 interface Project {
