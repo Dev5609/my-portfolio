@@ -50,6 +50,10 @@ const oldProjects = [
 ];
 
 const Museum = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <main className="dark min-h-screen bg-background text-foreground">
       {/* Soft paper backdrop */}
