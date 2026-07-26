@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
-import { Archive } from "lucide-react";
 import ProjectCard from "./ProjectCard";
-import { Link } from "react-router-dom";
 import projectsData from "@/data/projects.json";
 
 interface Project {
@@ -82,31 +80,6 @@ const ProjectsSection = () => {
         <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto text-center mt-16">
           And of course, this very portfolio site you're exploring right now!
         </p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="flex justify-center mt-12"
-        >
-          <Link
-            to="/museum"
-            className="group inline-flex items-center gap-3 px-6 py-4 rounded-2xl glass-card hover:bg-accent/10 transition-colors"
-          >
-            <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary">
-              <Archive className="w-5 h-5" />
-            </span>
-            <div className="text-left">
-              <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
-                Visit the Museum
-              </p>
-              <p className="text-xs text-muted-foreground">
-                See my first website from 2021
-              </p>
-            </div>
-          </Link>
-        </motion.div>
       </div>
     </section>
   );

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, ChevronDown } from "lucide-react";
+import { Github, Linkedin, ChevronDown, Archive } from "lucide-react";
+import { Link } from "react-router-dom";
 import XLogo from "./XLogo";
 
 const HeroSection = () => {
@@ -106,6 +107,13 @@ const HeroSection = () => {
               <XLogo className="w-4 h-4" />
               <span>X</span>
             </a>
+            <Link
+              to="/museum"
+              className="group flex items-center gap-2 px-4 py-2 rounded-full glass-card text-sm transition-all hover:scale-105 hover:border-primary/50"
+            >
+              <Archive className="w-4 h-4" />
+              <span>Museum</span>
+            </Link>
           </motion.div>
         </motion.div>
 
