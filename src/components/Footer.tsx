@@ -29,7 +29,7 @@ const Footer = () => {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-xs font-mono text-muted-foreground hover:text-primary hover:border-primary/40 transition-colors"
           >
             <Archive className="w-3.5 h-3.5" />
-            visit the museum
+            Visit the Museum — Coding-Cafe (2021)
           </Link>
         </motion.div>
       </div>
