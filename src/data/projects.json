@@ -69,7 +69,7 @@
     "id": "obsidian-cafe",
     "name": "Obsidian Cafe",
     "repoName": "obsidian-cafe",
-    "featured": false,
+    "featured": true,
     "description": "A stylish, dark-themed cafe website that creates a cozy digital atmosphere — perfect for showcasing a menu and drawing customers in.",
     "techStack": ["React", "TypeScript", "Tailwind CSS", "Vite"],
     "githubUrl": "https://github.com/Dev5609",
