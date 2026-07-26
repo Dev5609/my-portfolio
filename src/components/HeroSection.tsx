@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, ChevronDown } from "lucide-react";
+import { Github, Linkedin, ChevronDown, Archive } from "lucide-react";
+import { Link } from "react-router-dom";
 import XLogo from "./XLogo";
 
 const HeroSection = () => {

@@ -64,5 +64,16 @@
     "githubUrl": "https://github.com/Dev5609/Calculator",
     "demoUrl": "https://calculator-dev9.vercel.app",
     "language": "HTML"
+  },
+  {
+    "id": "obsidian-cafe",
+    "name": "Obsidian Cafe",
+    "repoName": "obsidian-cafe",
+    "featured": false,
+    "description": "A stylish, dark-themed cafe website that creates a cozy digital atmosphere — perfect for showcasing a menu and drawing customers in.",
+    "techStack": ["React", "TypeScript", "Tailwind CSS", "Vite"],
+    "githubUrl": "https://github.com/Dev5609",
+    "demoUrl": "https://obsidian-cafe.vercel.app",
+    "language": "TypeScript"
   }
 ]
