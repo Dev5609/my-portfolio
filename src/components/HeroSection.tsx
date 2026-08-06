@@ -1,137 +1,190 @@
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { Github, Linkedin, ChevronDown, Archive } from "lucide-react";
+import { Github, Linkedin, ArrowDown, Archive } from "lucide-react";
 import { Link } from "react-router-dom";
+import gsap from "gsap";
 import XLogo from "./XLogo";
+import { useMagnetic } from "@/hooks/useMagnetic";
+import { prefersReducedMotion, useParallax } from "@/hooks/useScrollReveal";
+
+const EASE = [0.22, 1, 0.36, 1] as const;
+
+/** Line-by-line clip reveal used for the hero name + tagline. */
+const RevealLine = ({
+  children,
+  delay = 0,
+  className = "",
+}: {
+  children: React.ReactNode;
+  delay?: number;
+  className?: string;
+}) => (
+  <span className="block overflow-hidden pb-[0.06em]">
+    <motion.span
+      initial={{ y: "110%", clipPath: "inset(0 0 100% 0)" }}
+      animate={{ y: "0%", clipPath: "inset(0 0 -10% 0)" }}
+      transition={{ duration: 1, delay, ease: EASE }}
+      className={`block ${className}`}
+    >
+      {children}
+    </motion.span>
+  </span>
+);
 
 const HeroSection = () => {
+  const magnetRef = useMagnetic<HTMLAnchorElement>(0.28);
+  const glowRef = useRef<HTMLDivElement>(null);
+  const auroraRef = useParallax<HTMLDivElement>(70);
+
+  // Soft cursor-trailing glow — hero only.
+  useEffect(() => {
+    const el = glowRef.current;
+    if (!el || prefersReducedMotion()) return;
+    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+
+    const section = el.parentElement;
+    if (!section) return;
+
+    const xTo = gsap.quickTo(el, "x", { duration: 1.1, ease: "power3.out" });
+    const yTo = gsap.quickTo(el, "y", { duration: 1.1, ease: "power3.out" });
+
+    const onMove = (e: MouseEvent) => {
+      const r = section.getBoundingClientRect();
+      xTo(e.clientX - r.left);
+      yTo(e.clientY - r.top);
+      gsap.to(el, { opacity: 1, duration: 0.6 });
+    };
+    const onLeave = () => gsap.to(el, { opacity: 0, duration: 0.8 });
+
+    section.addEventListener("mousemove", onMove);
+    section.addEventListener("mouseleave", onLeave);
+    return () => {
+      section.removeEventListener("mousemove", onMove);
+      section.removeEventListener("mouseleave", onLeave);
+      gsap.killTweensOf(el);
+    };
+  }, []);
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background gradient orbs */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-1/4 -right-20 w-80 h-80 bg-cyan-500/15 rounded-full blur-3xl animate-float" style={{ animationDelay: "-3s" }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-teal-500/5 rounded-full blur-3xl" />
+    <section className="relative flex min-h-[100svh] items-center overflow-hidden pt-28 pb-20">
+      {/* Aurora mesh gradient — the page's single "wow" background moment */}
+      <div
+        ref={auroraRef}
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10"
+      >
+        <div className="aurora-blob animate-aurora-a left-[-12%] top-[4%] h-[46vw] w-[46vw] bg-primary/20" />
+        <div className="aurora-blob animate-aurora-b right-[-10%] top-[22%] h-[40vw] w-[40vw] bg-ember/[0.16]" />
+        <div className="aurora-blob animate-aurora-c left-[26%] bottom-[-16%] h-[42vw] w-[42vw] bg-primary/[0.09]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
       </div>
 
-      {/* Grid pattern overlay */}
+      {/* Cursor-trailing glow */}
       <div
-        className="absolute inset-0 opacity-[0.02]"
-        style={{
-          backgroundImage: `linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)`,
-          backgroundSize: '50px 50px'
-        }}
+        ref={glowRef}
+        aria-hidden="true"
+        className="pointer-events-none absolute -z-10 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-ember/[0.07] opacity-0 blur-3xl"
       />
 
-      <div className="container relative z-10 px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-center max-w-4xl mx-auto"
-        >
-          {/* Status badge */}
+      <div className="container relative z-10">
+        <div className="max-w-4xl">
+          {/* Status — one of only two pill badges kept as a signature motif */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8"
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: EASE }}
+            className="mb-10 inline-flex items-center gap-3 rounded-full glass-card glass-reflect px-4 py-2"
           >
-            <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-            <span className="text-sm text-muted-foreground font-mono">Available for new projects</span>
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full rounded-full bg-primary animate-status-ping" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
+            </span>
+            <span className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-muted-foreground">
+              Available for new projects
+            </span>
           </motion.div>
 
-          {/* Main heading */}
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6"
-          >
-            <span className="block">Hey, I'm</span>
-            <span className="gradient-text">Devansh Goel</span>
-          </motion.h1>
+          <h1 className="display text-display-md md:text-display-lg text-bone">
+            <RevealLine delay={0.15} className="text-muted-foreground/90">
+              Hey, I'm
+            </RevealLine>
+            <RevealLine delay={0.3}>Devansh Goel</RevealLine>
+          </h1>
 
-          {/* Tagline */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.6 }}
-            className="text-lg md:text-2xl text-foreground/90 font-mono mb-6"
-          >
-            Building Modern Websites &amp; AI Applications
-          </motion.p>
+          <p className="mt-8 max-w-2xl text-xl md:text-3xl font-light leading-snug text-foreground/85">
+            <RevealLine delay={0.5}>
+              Building Modern Websites{" "}
+              <span className="text-ember">&amp;</span> AI Applications
+            </RevealLine>
+          </p>
 
-          {/* Description */}
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.6 }}
-            className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12"
+            transition={{ duration: 0.8, delay: 0.7, ease: EASE }}
+            className="mt-8 max-w-xl text-base md:text-lg font-light leading-relaxed text-muted-foreground"
           >
             I build modern websites and AI-powered applications that help
-            businesses and creators establish a stronger, more meaningful
-            online presence.
+            businesses and creators establish a stronger, more meaningful online
+            presence.
           </motion.p>
 
-          {/* Social links */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.6 }}
-            className="flex items-center justify-center gap-4"
+            transition={{ duration: 0.8, delay: 0.85, ease: EASE }}
+            className="mt-12 flex flex-wrap items-center gap-3"
           >
             <a
+              ref={magnetRef}
               href="https://github.com/Dev5609"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium transition-all hover:scale-105 glow-primary"
+              className="group inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-primary-foreground transition-shadow glow-primary hover:shadow-2xl"
             >
-              <Github className="w-5 h-5" />
+              <Github className="h-4 w-4" />
               <span>GitHub</span>
             </a>
             <a
               href="https://www.linkedin.com/in/devansh-goel09"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-2 px-6 py-3 rounded-full glass-card transition-all hover:scale-105 hover:border-primary/50"
+              className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3.5 text-sm text-bone/90 transition-colors hover:border-bone/40 hover:text-bone"
             >
-              <Linkedin className="w-5 h-5" />
+              <Linkedin className="h-4 w-4" />
               <span>LinkedIn</span>
             </a>
             <a
               href="https://x.com/devanshh_9"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-2 px-6 py-3 rounded-full glass-card transition-all hover:scale-105 hover:border-primary/50"
+              className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3.5 text-sm text-bone/90 transition-colors hover:border-bone/40 hover:text-bone"
             >
-              <XLogo className="w-4 h-4" />
+              <XLogo className="h-3.5 w-3.5" />
               <span>X</span>
             </a>
             <Link
               to="/museum"
-              className="group flex items-center gap-2 px-4 py-2 rounded-full glass-card text-sm transition-all hover:scale-105 hover:border-primary/50"
+              className="inline-flex items-center gap-2 rounded-full px-4 py-3 text-xs font-mono uppercase tracking-[0.14em] text-muted-foreground transition-colors hover:text-ember"
             >
-              <Archive className="w-4 h-4" />
+              <Archive className="h-3.5 w-3.5" />
               <span>Museum</span>
             </Link>
           </motion.div>
-        </motion.div>
+        </div>
 
-        {/* Scroll indicator */}
-        <motion.div
+        {/* Scroll cue */}
+        <motion.a
+          href="#about"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 0.6 }}
-          className="mt-12"
+          transition={{ duration: 0.8, delay: 1.3 }}
+          className="mt-20 inline-flex items-center gap-3 font-mono text-[0.7rem] uppercase tracking-[0.22em] text-muted-foreground transition-colors hover:text-bone"
         >
-          <a
-            href="#projects"
-            className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-          >
-            <span className="text-sm font-mono">Scroll to explore</span>
-            <ChevronDown className="w-5 h-5 animate-bounce" />
-          </a>
-        </motion.div>
+          <span className="h-px w-10 bg-border" />
+          Scroll to explore
+          <ArrowDown className="h-3.5 w-3.5 animate-bounce" />
+        </motion.a>
       </div>
     </section>
   );
