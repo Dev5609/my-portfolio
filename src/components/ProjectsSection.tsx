@@ -1,84 +1,80 @@
-import { motion } from "framer-motion";
-import ProjectCard from "./ProjectCard";
+import FeaturedProjectCard, {
+  CompactProjectCard,
+  type Project,
+} from "./ProjectCard";
 import projectsData from "@/data/projects.json";
-
-interface Project {
-  id: string;
-  name: string;
-  description: string;
-  techStack: string[];
-  githubUrl: string;
-  demoUrl: string;
-  language: string;
-  featured?: boolean;
-}
+import { useSectionReveal } from "@/hooks/useScrollReveal";
 
 const projects = projectsData as Project[];
 
-// Preserve JSON order for featured hierarchy: BhumiPoojan -> SummarIQ -> Milletify
+// Preserve JSON order for featured hierarchy
 const featured = projects.filter((p) => p.featured);
 const others = projects.filter((p) => !p.featured);
+const [lead, ...rest] = featured;
 
 const ProjectsSection = () => {
-  return (
-    <section id="projects" className="py-16 md:py-24 relative">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+  const ref = useSectionReveal<HTMLElement>();
 
-      <div className="container px-6">
-        {/* Featured Work */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <span className="inline-block px-4 py-2 rounded-full glass-card text-sm font-mono text-primary mb-4">
-            Featured Work
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Projects I've Built
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+  return (
+    <section id="projects" ref={ref} className="hairline py-24 md:py-32">
+      <div className="container">
+        <div className="mb-16 flex flex-col gap-6 md:mb-24 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-2xl">
+            <div data-reveal className="eyebrow mb-6">
+              Featured Work
+            </div>
+            <h2 data-reveal className="display text-display-sm md:text-display-md text-bone">
+              Projects I've <span className="italic">Built</span>
+            </h2>
+          </div>
+          <p
+            data-reveal
+            className="max-w-sm text-base font-light leading-relaxed text-muted-foreground md:text-right"
+          >
             A selection of real projects — from AI-powered tools to modern
             business platforms.
           </p>
-        </motion.div>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
-          {featured.map((project, index) => (
-            <ProjectCard key={project.id} project={project} index={index} />
+        {/* Lead project gets the full width; the rest stagger left/right */}
+        <div className="space-y-20 md:space-y-28">
+          {lead && <FeaturedProjectCard project={lead} index={0} lead />}
+          {rest.map((project, index) => (
+            <FeaturedProjectCard
+              key={project.id}
+              project={project}
+              index={index}
+            />
           ))}
         </div>
 
-        {/* Other Projects */}
         {others.length > 0 && (
-          <>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center mt-24 mb-12"
-            >
-              <span className="inline-block px-4 py-2 rounded-full glass-card text-sm font-mono text-primary mb-4">
+          <div className="mt-28 md:mt-36">
+            <div className="mb-10 max-w-md md:ml-auto md:text-right">
+              <div
+                data-reveal
+                className="eyebrow mb-5 md:flex-row-reverse md:before:hidden md:after:block md:after:h-px md:after:w-8 md:after:bg-ember/70 md:after:content-['']"
+              >
                 More Builds
-              </span>
-              <h3 className="text-3xl md:text-4xl font-bold">
+              </div>
+              <h3 data-reveal className="display text-3xl md:text-4xl text-bone">
                 Other Projects
               </h3>
-            </motion.div>
+            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
-              {others.map((project, index) => (
-                <ProjectCard key={project.id} project={project} index={index} />
+            <div className="grid gap-x-16 md:grid-cols-2">
+              {others.map((project) => (
+                <CompactProjectCard key={project.id} project={project} />
               ))}
             </div>
-          </>
+          </div>
         )}
 
-        <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto text-center mt-16">
-          And of course, this very portfolio site you're exploring right now!
+        <p
+          data-reveal
+          className="mt-20 max-w-md font-light text-muted-foreground"
+        >
+          And of course, this very portfolio site you're exploring right now.
         </p>
       </div>
     </section>
