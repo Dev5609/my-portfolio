@@ -7,15 +7,21 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: "1.5rem",
       screens: {
         "2xl": "1400px",
       },
     },
     extend: {
       fontFamily: {
-        sans: ["Space Grotesk", "system-ui", "sans-serif"],
+        display: ["Instrument Serif", "Georgia", "serif"],
+        sans: ["Work Sans", "system-ui", "sans-serif"],
         mono: ["JetBrains Mono", "monospace"],
+      },
+      fontSize: {
+        "display-sm": ["clamp(2.25rem, 5vw, 3.25rem)", { lineHeight: "1" }],
+        "display-md": ["clamp(2.75rem, 7vw, 4.75rem)", { lineHeight: "0.96" }],
+        "display-lg": ["clamp(3.25rem, 11vw, 8rem)", { lineHeight: "0.9" }],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -23,6 +29,11 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        bone: "hsl(var(--bone))",
+        ember: {
+          DEFAULT: "hsl(var(--ember))",
+          foreground: "hsl(var(--ember-foreground))",
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -74,12 +85,17 @@ export default {
           from: { opacity: "0", transform: "scale(0.95)" },
           to: { opacity: "1", transform: "scale(1)" },
         },
+        "status-ping": {
+          "0%": { transform: "scale(1)", opacity: "0.6" },
+          "70%, 100%": { transform: "scale(2.6)", opacity: "0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-in": "fade-in 0.6s ease-out forwards",
         "scale-in": "scale-in 0.4s ease-out forwards",
+        "status-ping": "status-ping 2.4s cubic-bezier(0, 0, 0.2, 1) infinite",
       },
     },
   },
