@@ -22,6 +22,39 @@
     "language": "TypeScript"
   },
   {
+    "id": "blissx",
+    "name": "BlissX",
+    "repoName": "blissx",
+    "featured": true,
+    "description": "A refined, modern brand experience built to leave a lasting impression — smooth interactions, clean visuals, and a polished feel throughout.",
+    "techStack": ["React", "TypeScript", "Tailwind CSS", "Vite"],
+    "githubUrl": "https://github.com/Dev5609",
+    "demoUrl": "https://blissx.vercel.app",
+    "language": "TypeScript"
+  },
+  {
+    "id": "obsidian-cafe",
+    "name": "Obsidian Cafe",
+    "repoName": "obsidian-cafe",
+    "featured": true,
+    "description": "A stylish, dark-themed cafe website that creates a cozy digital atmosphere — perfect for showcasing a menu and drawing customers in.",
+    "techStack": ["React", "TypeScript", "Tailwind CSS", "Vite"],
+    "githubUrl": "https://github.com/Dev5609",
+    "demoUrl": "https://obsidian-cafe.vercel.app",
+    "language": "TypeScript"
+  },
+  {
+    "id": "orion-x",
+    "name": "Orion X",
+    "repoName": "orionx",
+    "featured": true,
+    "description": "A bold, tech-forward web presence with a futuristic look — designed to stand out and communicate innovation at every scroll.",
+    "techStack": ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    "githubUrl": "https://github.com/Dev5609",
+    "demoUrl": "https://orionx-dev.vercel.app",
+    "language": "TypeScript"
+  },
+  {
     "id": "summariq",
     "name": "SummarIQ",
     "repoName": "youtube-notes-pro",
@@ -64,16 +97,5 @@
     "githubUrl": "https://github.com/Dev5609/Calculator",
     "demoUrl": "https://calculator-dev9.vercel.app",
     "language": "HTML"
-  },
-  {
-    "id": "obsidian-cafe",
-    "name": "Obsidian Cafe",
-    "repoName": "obsidian-cafe",
-    "featured": true,
-    "description": "A stylish, dark-themed cafe website that creates a cozy digital atmosphere — perfect for showcasing a menu and drawing customers in.",
-    "techStack": ["React", "TypeScript", "Tailwind CSS", "Vite"],
-    "githubUrl": "https://github.com/Dev5609",
-    "demoUrl": "https://obsidian-cafe.vercel.app",
-    "language": "TypeScript"
   }
 ]
