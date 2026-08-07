@@ -272,3 +272,17 @@
     background: hsl(var(--background));
   }
 }
+
+/* ---- Ambient hero device ---- */
+.dot-grid {
+  background-image: radial-gradient(hsl(var(--bone) / 0.28) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow { animation: spin-slow 48s linear infinite; }
+.animate-spin-slower { animation: spin-slow 80s linear infinite reverse; }
+@media (prefers-reduced-motion: reduce) {
+  .animate-spin-slow, .animate-spin-slower { animation: none !important; }
+}
