@@ -14,8 +14,16 @@ const TestimonialsSection = () => {
   const ref = useSectionReveal<HTMLElement>();
 
   return (
-    <section id="testimonials" ref={ref} className="hairline py-24 md:py-32">
-      <div className="container">
+    <section id="testimonials" ref={ref} className="hairline relative overflow-hidden py-24 md:py-32">
+      {/* Oversized decorative quote mark — anchors the empty right side */}
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute right-[2%] top-1/2 hidden -translate-y-1/2 select-none font-display text-[34rem] leading-none text-bone/[0.035] lg:block"
+      >
+        ”
+      </span>
+
+      <div className="container relative">
         <div data-reveal className="eyebrow mb-12">
           Kind Words
         </div>
