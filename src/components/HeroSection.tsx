@@ -91,16 +91,16 @@ const HeroSection = () => {
         aria-hidden="true"
         className="pointer-events-none absolute right-[-6%] top-1/2 hidden h-[46vw] w-[46vw] max-h-[720px] max-w-[720px] -translate-y-1/2 lg:block"
       >
-        <div className="absolute inset-[14%] rounded-full border border-primary/15 animate-spin-slow">
+        <div className="absolute inset-[14%] rounded-full border border-primary/25 animate-spin-slow">
           <span className="absolute left-1/2 top-0 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/70 blur-[1px]" />
         </div>
-        <div className="absolute inset-[26%] rounded-full border border-ember/15 animate-spin-slower">
+        <div className="absolute inset-[26%] rounded-full border border-ember/20 animate-spin-slower">
           <span className="absolute right-0 top-1/2 h-1.5 w-1.5 -translate-y-1/2 translate-x-1/2 rounded-full bg-ember/70" />
         </div>
-        <div className="absolute inset-[38%] rounded-full border border-bone/10" />
-        <div className="absolute inset-[8%] rounded-full dot-grid opacity-[0.14] [mask-image:radial-gradient(circle,black,transparent_70%)]" />
-        <div className="absolute inset-[30%] rounded-full bg-primary/10 blur-3xl" />
-        <div className="absolute inset-[42%] rounded-full bg-ember/[0.07] blur-2xl" />
+        <div className="absolute inset-[38%] rounded-full border border-bone/[0.12]" />
+        <div className="absolute inset-[8%] rounded-full dot-grid opacity-[0.5] [mask-image:radial-gradient(circle,black,transparent_70%)]" />
+        <div className="absolute inset-[30%] rounded-full bg-primary/[0.13] blur-3xl" />
+        <div className="absolute inset-[42%] rounded-full bg-ember/[0.09] blur-2xl" />
       </div>
 
       <div className="container relative z-10">
