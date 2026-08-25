@@ -5,7 +5,7 @@ import TechMarquee from "@/components/TechMarquee";
 import CurrentlySection from "@/components/CurrentlySection";
 import ProjectsSection from "@/components/ProjectsSection";
 import ContactSection from "@/components/ContactSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
+
 import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
 import NoiseOverlay from "@/components/NoiseOverlay";
@@ -22,7 +22,7 @@ const Index = () => {
         <TechMarquee />
         <CurrentlySection />
         <ProjectsSection />
-        <TestimonialsSection />
+        
         <ContactSection />
       </main>
       <Footer />
